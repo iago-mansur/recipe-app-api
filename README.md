@@ -35,3 +35,7 @@ docker-compose up
 docker-compose down
 
 docker-compose build
+
+docker-compose run --rm app sh -c "django-admin startapp core"
+
+docker-compose run --rm app sh -c "python manage.py test"
