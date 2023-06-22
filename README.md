@@ -39,3 +39,11 @@ docker-compose build
 docker-compose run --rm app sh -c "django-admin startapp core"
 
 docker-compose run --rm app sh -c "python manage.py test"
+
+docker-compose run --rm app sh -c "python manage.py wait_for_db"
+
+docker-compose run --rm app sh -c "python manage.py wait_for_db && flake8"
+
+docker-compose down
+
+docker-compose up
