@@ -47,3 +47,28 @@ docker-compose run --rm app sh -c "python manage.py wait_for_db && flake8"
 docker-compose down
 
 docker-compose up
+
+docker-compose run --rm app sh -c "python manage.py test"
+
+docker-compose run --rm app sh -c "python manage.py makemigrations"
+
+docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py migrate"
+
+docker volume ls
+
+docker volume rm recipe-app-api_dev-db-data
+
+docker-compose down
+
+docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py migrate"
+
+docker-compose run --rm app sh -c "python manage.py test"
+
+docker-compose up
+
+http://127.0.0.1:8000/
+
+docker-compose run --rm app sh -c "python manage.py createsuperuser"
+
+Email: admin@example.com                    
+Password: 123456
