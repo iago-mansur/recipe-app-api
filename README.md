@@ -74,3 +74,5 @@ Email: admin@example.com
 Password: 123456
 
 docker-compose run --rm app sh -c "python manage.py test"
+
+docker-compose build
