@@ -82,3 +82,16 @@ docker-compose run --rm app sh -c "django-admin startapp user"
 docker-compose run --rm app sh -c "python manage.py test"
 
 docker-compose up
+
+Email: user2@example.com
+Password: Awesome!23
+
+docker-compose run --rm app sh -c "python manage.py test"
+
+docker-compose run --rm app sh -c "python manage.py makemigrations"
+
+docker-compose run --rm app sh -c "django-admin startapp recipe"
+
+docker-compose run --rm app sh -c "python manage.py test"
+
+docker-compose up
