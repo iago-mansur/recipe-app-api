@@ -131,3 +131,11 @@ docker-compose down
 docker-compose up
 
 docker-compose down
+
+docker-compose run --rm app sh -c "python manage.py test"
+
+docker-compose up
+
+http://127.0.0.1:8000/api/docs/
+
+docker-compose down
