@@ -68,7 +68,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
         return queryset.filter(
             user=self.request.user
         ).order_by('-id').distinct()
-    
+
     def get_serializer_class(self):
         """Return the serializer class for request."""
         if self.action == 'list':
@@ -77,7 +77,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
             return serializers.RecipeImageSerializer
 
         return self.serializer_class
-    
+
     def perform_create(self, serializer):
         """Create a new recipe."""
         serializer.save(user=self.request.user)
@@ -126,7 +126,7 @@ class BaseRecipeAttrViewSet(mixins.DestroyModelMixin,
         return queryset.filter(
             user=self.request.user
         ).order_by('-name').distinct()
-    
+
 
 class TagViewSet(BaseRecipeAttrViewSet):
     """Manage tags in the database."""
